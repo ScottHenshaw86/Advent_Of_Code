@@ -1,0 +1,1 @@
+New repo to house all of my Advent Of Code code. Follow along with me as I try to save Christmas by getting all 50 stars! I'll try to make 2022 code as approachable as possible for newbies, with easy-to-read, commented code. So hopefully beginners can follow along and learn some new things by analyzing my code.
