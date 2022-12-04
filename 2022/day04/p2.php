@@ -14,10 +14,10 @@ foreach ($data as $line) {
     $p2_max = $pair2[1];
 
     if (
-        ($p1_min >= $p2_min AND $p1_max <= $p2_max) OR
-        ($p2_min >= $p1_min AND $p2_max <= $p1_max) OR
-        ($p1_min < $p2_min AND $p1_max >= $p2_min) OR
-        ($p2_min < $p1_min AND $p2_max >= $p1_min)
+        ($p1_min >= $p2_min AND $p1_min <= $p2_max) OR
+        ($p1_max >= $p2_min AND $p1_max <= $p2_max) OR 
+        ($p2_min >= $p1_min AND $p2_min <= $p1_max) OR
+        ($p2_max >= $p1_min AND $p2_max <= $p1_max)
     ) {
         $sum++;
     }
