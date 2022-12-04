@@ -1,0 +1,46 @@
+1. loop through inputs
+
+2. ignore 'off' instructions (only care about instructions contributing to ON cuboids)
+
+3. starting from beginning, calculate the volume that the current cuboid contributes to the final value
+
+4. to do this, loop through the remaining elements and subtract the volume of any overlapping areas.
+    Will consider those overlapping areas to be contributed by the future elements, not the current one
+
+5. #4 is complicated by the fact that multiple future elements can overlap the same area. How to deal with this?
+
+6. Need to find the area of overlap, then search future elements for the same overlap. If they, too, overlap.
+    then take that new overlap area and continue searching until the overlap volume is 0.
+
+
+
+i -- main loop. loops through each row
+
+j -- secondary loop. Used for checking d1 overlaps with the current element.
+        if no overlap here, the loop will continue - the current cuboid volume will be added to the total
+        if there is an overlap, need to check if future elements have the same overlap.
+        if no future elements have the same overlap, then subtract this volume from the i cuboid
+        // this step is hard because need to branch out and subtract at each level
+        // loop? recursion? both?
+
+
+k -- ternary loop. Used for checking d2
+
+
+ i = 0
+    cuboid = [[1,4],[2,5],[1,1]]
+    volume = 16
+    j = 1
+        overlapArea = [[4,4], [4,5], [1,1]]
+        overlapVolume = 2
+        k = 2
+            overlapArea = [[4,4],[4,4],[1,1]]
+            overlapVolume = 1
+                L = 3
+                L = 4
+                    overlapArea = [[4,4],[4,4],[1,1]]
+                    overlapVolume = 1   
+        k = 3
+            overlapArea = [[4,4],[4,4],[1,1]]
+            overlapVolume = 1
+
